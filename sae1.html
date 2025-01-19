@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE 1.1 - Système de Commande MCC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="header-content">
+            <h1><a href="portfolio.html" class="portfolio-button">Portfolio</a></h1>
+        </div>
+    </header>
+    <section>
+        <h2>SAE 1.1 : Conception d’un Système de Commande pour une MCC</h2>
+        <p><strong>Thème :</strong> Variation de vitesse d’une MCC via modulation de largeur d’impulsion (PWM).</p>
+    </section>
+    <section>
+        <h3>1. Objectifs du Projet</h3>
+        <p>
+            Le projet SAE 1.1 porte sur la conception d’un système de commande pour une Machine à Courant Continu (MCC). L’objectif principal est de faire varier la vitesse du moteur en modulant la tension moyenne appliquée à la machine. 
+        </p>
+        <p>
+            La MCC utilisée est une **AXEM 65V 8A**, fonctionnant sous une tension nominale de 65V et un courant de 8A. Nous avons cherché à concevoir un système de commande capable de réguler précisément cette tension en fonction du signal PWM.
+        </p>
+        <figure>
+            <img src="photo1.jpg" alt="Montage de la MCC" class="project-photo">
+            <figcaption>Montage initial de la MCC utilisé dans le projet.</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h3>2. Signal PWM</h3>
+        <p>
+            Le signal PWM est essentiel pour contrôler la vitesse de la MCC. Ce signal consiste en une série d’impulsions dont la largeur varie. En ajustant la durée pendant laquelle chaque impulsion reste à 5V (le rapport cyclique), on peut ajuster la tension moyenne appliquée au moteur, ce qui modifie sa vitesse de rotation.
+        </p>
+        <p>
+            Le SG3525, un circuit intégré, a été utilisé pour générer le signal PWM. Le rapport cyclique de ce signal (noté α) est ajusté pour contrôler la tension moyenne appliquée au moteur. L’objectif est d’augmenter ou de diminuer le rapport cyclique en fonction des besoins du système, permettant ainsi de contrôler avec précision la vitesse du moteur.
+        </p>
+        <figure>
+            <img src="PWMavecleSG3525intégré.jpg" alt="PWM avec le SG3525 intégré" class="project-photo">
+            <figcaption>Montage pour la génération du signal PWM avec le SG3525 intégré.</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h3>3. Alimentation</h3>
+        <p>
+            L’alimentation du système nécessite plusieurs étapes pour transformer l'alimentation secteur (240 V) en une tension stable de 15 V pour alimenter les composants électroniques. Voici les principales étapes :
+        </p>
+        <ul>
+            <li><strong>Transformateur abaisseur monophasé :</strong> Réduit la tension du réseau EDF de 240 V à 18 V.</li>
+            <li><strong>Pont de diodes :</strong> Permet de redresser la tension alternative en courant continu.</li>
+            <li><strong>Condensateur de filtrage :</strong> Lisse le courant continu pour réduire les variations.</li>
+            <li><strong>Régulateur LM7815 :</strong> Stabilise la tension à 15 V pour fournir une alimentation constante aux composants électroniques.</li>
+        </ul>
+    </section>
+    <section>
+        <h3>4. Résultats expérimentaux</h3>
+        <p>
+            Les tests ont montré que le système fonctionne comme prévu. En ajustant le rapport cyclique du signal PWM, nous avons pu faire varier la vitesse du moteur de manière fluide et précise. Le contrôle de la MCC est donc effectué avec succès à l’aide du signal PWM, ce qui valide le bon fonctionnement du système de commande conçu.
+        </p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Louis Raux | Département GEII - IUT Sénart-Fontainebleau</p>
+    </footer>
+</body>
+</html>

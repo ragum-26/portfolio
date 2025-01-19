@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAE 1.2 - Programmation PWM avec Arduino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="header-content">
+            <h1><a href="portfolio.html" class="portfolio-button">Portfolio</a></h1>
+        </div>
+    </header>
+    <section>
+        <h2>SAE 1.2 : Programmation du Signal PWM avec Arduino</h2>
+        <p><strong>Thème :</strong> Génération et contrôle du signal PWM avec Arduino pour une MCC.</p>
+    </section>
+    <section>
+        <h3>1. Objectifs du Projet</h3>
+        <p>
+            L’objectif principal était de générer un signal PWM sur une broche d’Arduino et de permettre à l’utilisateur d’ajuster le rapport cyclique en temps réel grâce à un potentiomètre. Un écran LCD affichait les informations en direct.
+        </p>
+        <figure>
+            <img src="photo4.jpg" alt="Arduino avec MCC" class="project-photo">
+            <figcaption>Montage Arduino avec MCC et potentiomètre.</figcaption>
+        </figure>
+    </section>
+    <section>
+        <h3>2. Génération du Signal PWM</h3>
+        <p>
+            Le signal PWM est généré sur la broche **D6** d’Arduino. La valeur lue par le potentiomètre est convertie pour ajuster le rapport cyclique grâce à la fonction `map()`.
+        </p>
+        <pre>
+int potValue = analogRead(A0);  // Lire la valeur du potentiomètre
+int pwmValue = map(potValue, 0, 1023, 0, 255);  // Convertir la valeur en plage 0-255
+analogWrite(6, pwmValue);  // Appliquer la valeur sur la broche 6
+        </pre>
+    </section>
+    <section>
+        <h3>3. Affichage sur l'Écran LCD</h3>
+        <p>
+            L’écran LCD affiche en temps réel le rapport cyclique appliqué. Le code utilisé est le suivant :
+        </p>
+        <pre>
+lcd.setCursor(0, 0);
+lcd.print("Duty Cycle: ");
+lcd.print(pwmValue);
+        </pre>
+    </section>
+    <section>
+        <h3>4. Test et Débogage</h3>
+        <p>
+            Les tests ont confirmé le fonctionnement du système. L’oscilloscope a validé la stabilité du signal PWM, et l’écran LCD a permis de suivre les variations en temps réel.
+        </p>
+        <figure>
+            <video controls class="project-video">
+                <source src="video1.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas les vidéos.
+            </video>
+            <figcaption>Vidéo du fonctionnement avec Arduino et LCD.</figcaption>
+        </figure>
+    </section>
+    <footer>
+        <p>&copy; 2025 Louis Raux | Département GEII - IUT Sénart-Fontainebleau</p>
+    </footer>
+</body>
+</html>

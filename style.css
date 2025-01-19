@@ -1,0 +1,185 @@
+/* Général */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f0f23, #1e1e2f);
+    color: #fff;
+    line-height: 1.8;
+    scroll-behavior: smooth;
+}
+
+/* En-tête fixe */
+header.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #222;
+    text-align: center;
+    padding: 15px 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Spécifique à la page d'accueil */
+header .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre horizontalement le contenu */
+    gap: 20px; /* Espace entre le logo et le texte */
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #ff7eb3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center; /* Centre le texte */
+}
+
+header a.portfolio-button {
+    text-decoration: none;
+    color: #ffd700;
+    font-size: 1rem;
+    padding: 5px 10px;
+    background: #ff7eb3;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+header a.portfolio-button:hover {
+    background: #ffd700;
+    color: #222;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    background: #1e1e2f;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 3px solid #ff7eb3;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: #ff7eb3;
+    color: #222;
+    transform: scale(1.1);
+}
+
+/* Sections */
+section {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+section p {
+    font-size: 1.1rem;
+    text-align: justify;
+    line-height: 1.8;
+    color: #eaeaea;
+    margin-bottom: 20px;
+}
+
+/* Photos et vidéos */
+.project-photo, .project-video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-photo:hover, .project-video:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Boutons stylisés */
+.projects .button, a.button {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #ff7eb3, #ffd700);
+    color: #222;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    text-align: center;
+    margin: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-transform: uppercase;
+}
+
+.projects .button:hover, a.button:hover {
+    background: linear-gradient(135deg, #ffd700, #ff7eb3);
+    transform: scale(1.1);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    background: #111;
+    padding: 20px;
+    color: #aaa;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Espacement des paragraphes */
+section p + p {
+    margin-top: 20px;
+}
+
+/* Redimensionner le logo */
+.sigle-upec {
+    max-width: 300px; /* Ajustez la largeur maximale du logo */
+    height: auto; /* Conserve les proportions */
+    display: block;
+    border-radius: 10px; /* Optionnel : arrondir légèrement les bords */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Optionnel : ajoute une ombre */
+}
